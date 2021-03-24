@@ -29,6 +29,10 @@ const Register = () => {
         <label>EMAIL</label>
         <input type="text" name="EMAIL" placeholder="EMAIL"></input>
     </div>
+    <div>
+        <label>PASWORD</label>
+        <input type="Password" name="password" placeholder="PAsSWORD"></input>
+    </div>
 <div>
         <label>Date</label><br/>
         <input type="date" name="date"  placeholder="date of issue"></input>
