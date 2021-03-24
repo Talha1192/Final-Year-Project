@@ -10,7 +10,7 @@ const Signin = () => {
     <img src={avatar} className={styles.avatar}></img>
 <h2>LOG IN</h2>
 <form>
-<label>USER NAME </label>
+<label>ENTER E-MAIL </label>
 
 <input type="E-mail" placeholder="ENTER E-Mail"></input>
 <label>PASSWORD</label>
