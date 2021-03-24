@@ -12,7 +12,7 @@ const Signin = () => {
 <form>
 <label>USER NAME </label>
 
-<input type="USER NAME" placeholder="ENTER USER NAME"></input>
+<input type="E-mail" placeholder="ENTER E-Mail"></input>
 <label>PASSWORD</label>
 <input type="PASWORD" placeholder="ENTER PASSWORD"></input>
 <input type="submit" value="LOG IN"></input>
