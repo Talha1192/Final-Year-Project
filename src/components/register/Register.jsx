@@ -1,22 +1,24 @@
 import axios from 'axios';
 import React,{useState,useEffect} from 'react'
-
+import {ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {useNavigate} from 'react-router-dom'
 const Register = () => {
-    const [name, setName] =useState();
+    const [fullName, setName] =useState();
     const [cnic,setCnic] = useState();                 
     const [address,setAddress] = useState();                 
-    const [mobile,setMobile] = useState();                 
+    const [phone,setMobile] = useState();                 
     const [email,setEmail] = useState();                 
     const [password,setPassword] = useState();                 
     const [date,setDate] = useState();                 
-    
+    const navigate = useNavigate();
     const handelSubmit = (e)=>{
         e.preventDefault()
         const user = JSON.stringify({
-            name,
+            fullName,
             cnic,
             address,
-            mobile,
+            phone,
             email,
             password,
             date
@@ -31,9 +33,21 @@ const Register = () => {
            console.log("Submit clicked",user)
                 axios.post('http://localhost:5000/api/register',user,config)
                 .then(res=>{
-                    console.log("Saad Response  ",res)
+                    console.log("User Registered",res)
+                    toast.success(res.data.message);
                 })
-                .catch(err=>console.log(err))
+                .catch((err)=>{
+                    // toast.error(res.data.message);
+                    toast.error(err.response.data.message, {
+                        position: "bottom-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                      });
+                    console.log(err.response.message)})
            
         
    
@@ -77,6 +91,17 @@ const Register = () => {
                 </div>
                 <input type="submit" value="Submit"></input>
             </form>
+            <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </div>
 
     )
