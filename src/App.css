@@ -488,6 +488,14 @@ align-items: center;
   background-position: center center;
  }
  
+ .register .daba div{
+   display: flex;
+   flex-direction:column
+ }
+.register .daba .already{
+  font-size: 12px;
+  margin: 5px;
+}
  .register h2{
   text-align: center;
   margin: 5px;

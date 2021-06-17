@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
-import {ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,Link} from 'react-router-dom'
 const Register = () => {
     const [fullName, setName] =useState();
     const [cnic,setCnic] = useState();                 
@@ -60,12 +60,12 @@ const Register = () => {
                 <div>
                     <label className="NAME">NAME</label>
                     <input onChange={(e)=>{setName(e.target.value)}} type="text" name="NAME" placeholder="NAME" />
-                    <br />
+                
                 </div>
                 <div>
-                    <label className="CNIC">CNIC</label><br />
+                    <label className="CNIC">CNIC</label>
                     <input onChange={(e)=>{setCnic(e.target.value)}} type="" name="CNIC" placeholder="CNIC"></input>
-                    <br />
+                
                 </div>
                 <div>
                     <label>Address</label>
@@ -86,23 +86,14 @@ const Register = () => {
                     <input onChange={(e)=>{setPassword(e.target.value)}} type="Password" name="password" placeholder="PAsSWORD"></input>
                 </div>
                 <div>
-                    <label>Date</label><br />
+                    <label>Date</label>
                     <input onChange={(e)=>{setDate(e.target.value)}} type="date" name="date" placeholder="date of issue"></input>
-                </div><div>
                 </div>
                 <input type="submit" value="Submit"></input>
+                <div className="already">Already have an account? <Link to='/signin'>Login</Link></div>
             </form>
-            <ToastContainer
-            position="bottom-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
+           
+            
         </div>
 
     )

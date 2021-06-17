@@ -39,12 +39,15 @@ color: floralwhite;
     border-bottom:1px solid ; 
 }
 .box input[type="submit"] input[type="log in"]{
+    cursor: pointer;
     outline: white;
     height: 10px;
     font: 16px;
 }
 .box input[type="submit"]{
     border: white;
+    cursor: pointer;
+
     outline:whitesmoke;
     background: red;
     color:white;

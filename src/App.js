@@ -47,7 +47,11 @@ function App() {
           <Route path="/asses7" element={<Assesries7 />} />
           <Route path="/asses8" element={<Assesries8 />} />
           <Route path="/asses9" element={<Assesries9 />} />
-          <ToastContainer
+         
+        </Routes>
+
+        <Footer />
+        <ToastContainer
             position="bottom-right"
             autoClose={5000}
             hideProgressBar={false}
@@ -58,9 +62,6 @@ function App() {
             draggable
             pauseOnHover
           />
-        </Routes>
-
-        <Footer />
       </Router>
     </div>
   );

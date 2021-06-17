@@ -53,7 +53,7 @@ exports.signup = async (req, res) => {
     // Step 3 - Email the user a unique verification link
     user.token = verificationToken
     await user.save();
-    const url = `http://localhost:5000/auth/verify/${verificationToken}`;
+    const url = `http://localhost:5000/api/verify/${verificationToken}`;
 
     transporter.sendMail({
       to: email,
