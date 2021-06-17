@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React,{useState,useEffect} from 'react'
+import axios from 'axios';
 import {ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {useNavigate} from 'react-router-dom'
@@ -35,6 +35,7 @@ const Register = () => {
                 .then(res=>{
                     console.log("User Registered",res)
                     toast.success(res.data.message);
+                    navigate('/signin')
                 })
                 .catch((err)=>{
                     // toast.error(res.data.message);
